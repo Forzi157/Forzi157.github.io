@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Homepage</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2A4B8D', // 学术风主色调（深蓝）
+                        secondary: '#5C7099',
+                        neutral: '#F5F7FA',
+                        dark: '#2D3748'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-padding {
+                @apply py-12 md:py-16;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+        }
+    </style>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-dark font-sans">
+    <!-- 顶部导航栏 - 响应式，移动端折叠为汉堡菜单 -->
+    <header class="sticky top-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- 姓名 Logo -->
+                <a href="#" class="text-2xl font-bold text-primary">Your Name</a>
+                
+                <!-- 桌面端导航 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-dark hover:text-primary transition-colors">About</a>
+                    <a href="#research" class="text-dark hover:text-primary transition-colors">Research</a>
+                    <a href="#projects" class="text-dark hover:text-primary transition-colors">Projects</a>
+                    <a href="#publications" class="text-dark hover:text-primary transition-colors">Publications</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <!-- 移动端汉堡菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- 移动端折叠菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#home" class="text-dark hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-dark hover:text-primary transition-colors">About</a>
+                    <a href="#research" class="text-dark hover:text-primary transition-colors">Research</a>
+                    <a href="#projects" class="text-dark hover:text-primary transition-colors">Projects</a>
+                    <a href="#publications" class="text-dark hover:text-primary transition-colors">Publications</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. 个人简介区 (Home) -->
+        <section id="home" class="bg-neutral section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- 头像 -->
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
+                        <img src="https://picsum.photos/200/200" alt="Your Profile Photo" class="w-full h-full object-cover">
+                    </div>
+                    <!-- 个人信息 -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Your Name</h1>
+                        <h2 class="text-xl md:text-2xl text-secondary font-medium mb-4">Research Scientist | PhD Candidate</h2>
+                        <p class="text-lg max-w-2xl">
+                            I am a researcher focused on Responsible GIS and Autonomous GeoAI, with a passion for developing ethical and efficient geospatial artificial intelligence solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 教育背景 (About) -->
+        <section id="about" class="section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">Education</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 教育经历 1 -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 card-hover">
+                        <div class="text-primary font-semibold text-lg mb-1">2020 - Present</div>
+                        <h3 class="text-xl font-bold mb-2">PhD in Geospatial Science</h3>
+                        <p class="text-secondary font-medium mb-2">University Name</p>
+                        <p class="text-gray-600">Advisor: Prof. XXXX | Research Focus: GeoAI</p>
+                    </div>
+                    <!-- 教育经历 2 -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 card-hover">
+                        <div class="text-primary font-semibold text-lg mb-1">2017 - 2020</div>
+                        <h3 class="text-xl font-bold mb-2">Master of GIS</h3>
+                        <p class="text-secondary font-medium mb-2">University Name</p>
+                        <p class="text-gray-600">Thesis: XXXX | GPA: 3.9/4.0</p>
+                    </div>
+                    <!-- 教育经历 3 -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 card-hover">
+                        <div class="text-primary font-semibold text-lg mb-1">2013 - 2017</div>
+                        <h3 class="text-xl font-bold mb-2">Bachelor of Geography</h3>
+                        <p class="text-secondary font-medium mb-2">University Name</p>
+                        <p class="text-gray-600">Honors: Summa Cum Laude | Major GPA: 3.8/4.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 研究方向 (Research) -->
+        <section id="research" class="bg-neutral section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">Research Interests</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 研究方向 1 -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Responsible GIS</h3>
+                        <p class="text-gray-600">Ethical considerations in geographic information systems, fairness in spatial data analysis, and responsible AI deployment in geospatial applications.</p>
+                    </div>
+                    <!-- 研究方向 2 -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Autonomous GeoAI</h3>
+                        <p class="text-gray-600">Development of self-learning geospatial AI models, autonomous spatial decision-making systems, and real-time geo-intelligence processing.</p>
+                    </div>
+                    <!-- 研究方向 3 -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Spatial Data Science</h3>
+                        <p class="text-gray-600">Advanced spatial statistics, machine learning for geospatial data, and big data analytics for urban and environmental studies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 项目展示 (Projects) -->
+        <section id="projects" class="section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">Research Projects</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 项目 1 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/600/400?random=1" alt="Project Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Ethical GeoAI Framework</h3>
+                            <p class="text-gray-600 mb-4">A comprehensive framework for evaluating and mitigating bias in geospatial AI models, applied to urban planning decision systems.</p>
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                                View Project <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 项目 2 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/600/400?random=2" alt="Project Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Autonomous Spatial Monitoring</h3>
+                            <p class="text-gray-600 mb-4">Real-time autonomous monitoring system for environmental changes using satellite imagery and edge computing.</p>
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                                View Project <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 论文发表 (Publications) -->
+        <section id="publications" class="bg-neutral section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">Publications</h2>
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <!-- 论文 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                        <h3 class="text-xl font-bold mb-1">Responsible AI in Urban GIS: A Critical Review</h3>
+                        <p class="text-secondary mb-2">Your Name, X. Author, Y. Author</p>
+                        <p class="text-gray-600 mb-3"><em>Journal of Geospatial Intelligence</em>, 2024</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-file-pdf mr-1"></i> PDF
+                            </a>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-link mr-1"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 论文 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                        <h3 class="text-xl font-bold mb-1">Autonomous GeoAI for Real-Time Disaster Response</h3>
+                        <p class="text-secondary mb-2">Your Name, Z. Author, W. Author</p>
+                        <p class="text-gray-600 mb-3"><em>Proceedings of the International Conference on GeoAI</em>, 2023</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-file-pdf mr-1"></i> PDF
+                            </a>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-link mr-1"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 论文 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                        <h3 class="text-xl font-bold mb-1">Bias Mitigation in Spatial Machine Learning Models</h3>
+                        <p class="text-secondary mb-2">X. Author, Your Name, Y. Author</p>
+                        <p class="text-gray-600 mb-3"><em>Transactions in GIS</em>, 2022</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-file-pdf mr-1"></i> PDF
+                            </a>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm">
+                                <i class="fa-solid fa-link mr-1"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 联系方式 (Contact) -->
+        <section id="contact" class="section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">Contact Me</h2>
+                <div class="max-w-2xl mx-auto bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="text-primary text-xl mr-4">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <p>your.email@university.edu</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-primary text-xl mr-4">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <p>Department of Geospatial Science, University Name</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-primary text-xl mr-4">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p>+1 (123) 456-7890</p>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="font-semibold mb-2">Connect with me:</h3>
+                            <div class="flex space-x-4 text-xl">
+                                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-google-scholar"></i></a>
+                                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2024 Your Name. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="hover:text-primary/80 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-primary/80 transition-colors">About</a>
+                    <a href="#research" class="hover:text-primary/80 transition-colors">Research</a>
+                    <a href="#contact" class="hover:text-primary/80 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单 -->
+    <script>
+        // 移动端汉堡菜单交互
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标（汉堡/关闭）
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 偏移量适配导航栏
+                        behavior: 'smooth'
+                    });
+                    
+                    // 移动端点击后关闭菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('i');
+                        icon.classList.replace('fa-xmark', 'fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
